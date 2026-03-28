@@ -12,7 +12,10 @@ export function HeroPage() {
   ];
 
   return (
-    <section className="flex min-h-[calc(100vh-80px)] items-center justify-center px-6 py-16 sm:min-h-[calc(100vh-96px)] sm:py-20 md:px-10">
+    <section
+      id="home"
+      className="flex min-h-[calc(100vh-80px)] items-center justify-center px-6 py-16 sm:min-h-[calc(100vh-96px)] sm:py-20 md:px-10"
+    >
       {/* Wider container on desktop */}
       <div className="w-full max-w-5xl text-center">
         {/* Subtitle */}
