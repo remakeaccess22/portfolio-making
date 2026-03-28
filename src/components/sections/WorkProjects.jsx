@@ -97,7 +97,7 @@ function ProjectCard({ category, year, title, description, tags }) {
 
 export function WorkProjects() {
   return (
-    <section id="work" className="w-full py-12">
+    <section id="work" className="scroll-mt-24 w-full py-12">
       <div className="mx-auto max-w-6xl px-6 md:px-10">
         <h2 className="text-[40px] font-bold text-[#F1F1F5] font-[Satoshi]">
           WORK & PROJECTS

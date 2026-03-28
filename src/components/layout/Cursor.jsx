@@ -1,10 +1,33 @@
 import { useEffect, useState } from "react";
 
 export function Cursor() {
+  const [isDesktop, setIsDesktop] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(pointer: fine)").matches,
+  );
+
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isClicking, setIsClicking] = useState(false);
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(pointer: fine)");
+
+    const handleChange = () => {
+      setIsDesktop(mediaQuery.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
+
+  // ✅ Mouse events (only on desktop)
+  useEffect(() => {
+    if (!isDesktop) return;
+
     const handleMouseMove = (e) => {
       setPosition({
         x: e.clientX,
@@ -24,7 +47,10 @@ export function Cursor() {
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);
     };
-  }, []);
+  }, [isDesktop]);
+
+  // ❗ Hide completely on mobile
+  if (!isDesktop) return null;
 
   return (
     <div
@@ -44,7 +70,7 @@ export function Cursor() {
             }`}
           />
 
-          {/* Always "You" */}
+          {/* Label */}
           <div className="rounded-md bg-white px-2 py-1 text-xs font-medium text-black">
             You
           </div>
