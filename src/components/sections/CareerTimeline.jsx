@@ -1,9 +1,9 @@
 const timeline = [
   {
     year: "2026 - Present",
-    role: "CO-FOUNDER & CHIEF OPERATING OFFICER",
+    role: "CO-FOUNDER & CHIEF EXECUTIVE OFFICER",
     description:
-      "Led operations and product development, designing systems and workflows for scalable AgriTech solutions.",
+      "Leading FarmIQ Technologies in building intelligent, data-driven solutions that empower farmers and transform the future of agriculture.",
     company: "FARMIQ TECHNOLOGIES",
   },
   {
