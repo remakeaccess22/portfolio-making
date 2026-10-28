@@ -27,3 +27,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local previews, review evidence, and deployment credentials
+/.impeccable/
+/design/
+/.vercel/
+
+# Unpublished writing and unused local font experiments
+/src/content/insights/drafts/
+/src/assets/fonts/Gilroy-*.ttf

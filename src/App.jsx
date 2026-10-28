@@ -1,66 +1,29 @@
-import { useState } from "react";
-import { Header } from "./components/layout/Header/Header";
-import { Container } from "./components/layout/Container";
-import { Background } from "./components/layout/Background";
-import { Cursor } from "./components/layout/Cursor";
-import { HeroPage } from "./components/sections/HeroPage";
-import { Stats } from "./components/sections/Stats";
-import { FadeUp } from "./components/ui/FadeUp";
-import { About } from "./components/sections/About";
-import { CareerTimeline } from "./components/sections/CareerTimeline";
-import { WorkProjects } from "./components/sections/WorkProjects";
-import { SkillsTools } from "./components/sections/SkillsTools";
-import { Footer } from "./components/sections/Footer";
-import { SmoothScroll } from "./components/ui/SmoothScroll";
-import { LeadershipSkills } from "./components/sections/LeadershipSkills";
-import { Preloader } from "./components/layout/Preloader";
+import { lazy, Suspense } from "react";
+import { ArrowUpRight } from "lucide-react";
+import { SiteIdentity } from "./components/portfolio/SiteIdentity";
 
-function App() {
-  const [loading, setLoading] = useState(true);
-  return (
-    <>
-      {loading && <Preloader onFinish={() => setLoading(false)} />}
+const Portfolio = lazy(() => import("./components/portfolio/Portfolio").then(module => ({ default: module.Portfolio })));
+const InsightsIndex = lazy(() => import("./components/insights/Insights").then(module => ({ default: module.InsightsIndex })));
+const InsightArticle = lazy(() => import("./components/insights/Insights").then(module => ({ default: module.InsightArticle })));
+const InitiativePage = lazy(() => import("./components/initiatives/Initiatives").then(module => ({ default: module.InitiativePage })));
 
-      {!loading && (
-        <>
-          <Cursor />
-          <SmoothScroll />
-          <Background>
-            <Container>
-              <FadeUp>
-                <Header />
-              </FadeUp>
-              <FadeUp>
-                <HeroPage />
-              </FadeUp>
-            </Container>
-            <FadeUp>
-              <Stats />
-            </FadeUp>
-            <Container>
-              <FadeUp>
-                <About />
-              </FadeUp>
-              <FadeUp>
-                <CareerTimeline />
-              </FadeUp>
-              <FadeUp>
-                <WorkProjects />
-              </FadeUp>
-              <FadeUp>
-                <LeadershipSkills />
-              </FadeUp>
-              <FadeUp>
-                <SkillsTools />
-              </FadeUp>
-              <FadeUp>
-                <Footer />
-              </FadeUp>
-            </Container>
-          </Background>
-        </>
-      )}
-    </>
-  );
+function JournalShell({ children }) {
+  return <><a className="skip-to-content" href="#main-content">Skip to content</a><header className="journal-navigation page-padding"><a className="gap-2" href="/"><SiteIdentity /></a><a href="/#contact">Let’s talk <ArrowUpRight size={14} /></a></header>{children}<footer className="journal-footer page-padding"><span>© {new Date().getFullYear()} Jude Rafael Alayacyac</span><a href="/">Back to portfolio</a></footer></>;
 }
-export default App;
+
+export default function App() {
+  const path = window.location.pathname.replace(/\/+$/, "") || "/";
+  let page;
+  if (path === "/" || path === "/design") page = <Portfolio />;
+  else if (path === "/insights") page = <JournalShell><InsightsIndex /></JournalShell>;
+  else if (path.startsWith("/insights/")) {
+    let slug;
+    try { slug = decodeURIComponent(path.slice("/insights/".length)); } catch { slug = ""; }
+    page = <JournalShell><InsightArticle slug={slug} /></JournalShell>;
+  } else if (path.startsWith("/initiatives/")) {
+    let slug;
+    try { slug = decodeURIComponent(path.slice("/initiatives/".length)); } catch { slug = ""; }
+    page = <JournalShell><InitiativePage slug={slug} /></JournalShell>;
+  } else page = <JournalShell><main className="page-not-found page-padding" id="main-content"><h1>Page not found.</h1><a className="text-link" href="/">Back to portfolio <ArrowUpRight size={16} /></a></main></JournalShell>;
+  return <Suspense fallback={<p className="page-padding" role="status">Loading…</p>}>{page}</Suspense>;
+}

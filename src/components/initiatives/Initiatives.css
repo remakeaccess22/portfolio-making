@@ -1,0 +1,14 @@
+@layer components {
+.initiative-credits { display: grid; gap: 1.5rem; }
+.initiative-credit-group { display: grid; grid-template-columns: 9rem minmax(0,1fr); gap: 1.5rem; align-items: start; }
+.initiative-credit-label { font-size: .85rem; color: var(--muted); padding-top: .5rem; }
+.initiative-credit-group ul { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem 1.5rem; padding: 0; margin: 0; }
+.initiative-credit-group li { display: flex; align-items: center; min-height: 2.75rem; }
+.initiative-credit-group a { display: inline-flex; align-items: center; padding-block: .4rem; }
+.initiative-credit-group img { max-width: 8rem; width: auto; height: auto; max-height: 2.5rem; object-fit: contain; }
+.initiative-logo-crop { display: block; position: relative; overflow: hidden; flex-shrink: 0; max-width: 100%; line-height: 0; }
+.initiative-credit-group .initiative-logo-crop > img { display: block; position: absolute; height: auto; max-width: none; max-height: none; object-fit: initial; }
+.initiative-more-credits { display: inline-flex; align-items: center; gap: .3rem; color: var(--action); font-size: .85rem; }
+@media(max-width:760px) { .initiative-credit-group { grid-template-columns: 1fr; gap: .6rem; } }
+@media(prefers-reduced-motion:reduce) { .initiatives-section *, .initiative-page * { transition: none !important; } }
+}

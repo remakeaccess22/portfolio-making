@@ -1,0 +1,46 @@
+@font-face { font-family: InterVariable; src: url("../assets/fonts/InterVariable.woff2") format("woff2"); font-style: normal; font-weight: 100 900; font-display: swap; }
+@font-face { font-family: InterVariable; src: url("../assets/fonts/InterVariable-Italic.woff2") format("woff2"); font-style: italic; font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "SF Pro Display"; src: local("SF Pro Display Regular"), local("SFProDisplay-Regular"); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: "SF Pro Display"; src: local("SF Pro Display Regular Italic"), local("SFProDisplay-RegularItalic"); font-style: italic; font-weight: 400; font-display: swap; }
+@font-face { font-family: "SF Pro Display"; src: local("SF Pro Display Medium"), local("SFProDisplay-Medium"); font-style: normal; font-weight: 500; font-display: swap; }
+@font-face { font-family: "SF Pro Display"; src: local("SF Pro Display Medium Italic"), local("SFProDisplay-MediumItalic"); font-style: italic; font-weight: 500; font-display: swap; }
+@font-face { font-family: "SF Pro Display"; src: local("SF Pro Display Semibold"), local("SFProDisplay-Semibold"); font-style: normal; font-weight: 600; font-display: swap; }
+@font-face { font-family: "SF Pro Display"; src: local("SF Pro Display Semibold Italic"), local("SFProDisplay-SemiboldItalic"); font-style: italic; font-weight: 600; font-display: swap; }
+@font-face { font-family: "SF Pro Display"; src: local("SF Pro Display Bold"), local("SFProDisplay-Bold"); font-style: normal; font-weight: 700; font-display: swap; }
+@font-face { font-family: "SF Pro Display"; src: local("SF Pro Display Bold Italic"), local("SFProDisplay-BoldItalic"); font-style: italic; font-weight: 700; font-display: swap; }
+
+@layer base {
+:root { --font-heading: InterVariable, system-ui, sans-serif; --font-body: "SF Pro Display", -apple-system, BlinkMacSystemFont, InterVariable, system-ui, sans-serif; font: 400 100%/1.6 var(--font-body); font-synthesis: none; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; color: var(--ink); background: var(--paper); color-scheme: light; --ink: #242529; --muted: #62646c; --paper: #fdfdfd; --surface: #f5f5f7; --line: #e3e4e8; --red: #a53240; --red-dark: #852735; --action: #0758b5; --focus: #0758b5; --radius: .75rem; --ease-out: cubic-bezier(.22,1,.36,1); }
+html { scroll-padding-top: 5rem; scroll-behavior: auto; scrollbar-color: #b5b6bd var(--paper); }
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-optical-sizing: auto; }
+a { color: inherit; text-decoration: none; text-underline-offset: .22em; }
+button { font: inherit; color: inherit; cursor: pointer; }
+a, button, summary { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+button:active { transform: scale(.98); }
+a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex="-1"]:focus-visible { outline: .125rem solid var(--focus); outline-offset: .25rem; border-radius: .2rem; }
+svg { flex-shrink: 0; vertical-align: middle; }
+em { font-family: inherit; }
+::selection { background: #dce9fb; color: #182b44; }
+}
+
+@layer components {
+.page-padding { @apply mx-auto w-full max-w-[73rem] px-[clamp(1.25rem,4vw,2.5rem)]; }
+.skip-to-content { position: fixed; top: .6rem; left: 1rem; padding: .7rem 1rem; background: var(--ink); color: #fff; z-index: 200; transform: translateY(-200%); font-size: .9rem; }
+.skip-to-content:focus { transform: none; }
+.text-link { display: inline-flex; align-items: center; gap: .4rem; min-height: 2.75rem; font-size: .875rem; line-height: 1.5; color: var(--action); }
+.text-link:hover { text-decoration: underline; }
+.text-link svg { transition: transform 180ms var(--ease-out); }
+.text-link:hover svg { transform: translate(.1rem,-.1rem); }
+.journal-navigation { min-height: 4rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; border-bottom: 1px solid var(--line); }
+.journal-navigation > a:first-child { font-size: 1.05rem; font-weight: 500; letter-spacing: -.02em; }
+.journal-navigation > a:last-child { font-size: .875rem; color: var(--action); }
+.journal-navigation a { min-height: 2.75rem; display: inline-flex; align-items: center; gap: .3rem; }
+.journal-footer { border-top: 1px solid var(--line); padding-block: 1.5rem; display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-size: .8125rem; color: var(--muted); }
+.journal-footer a { min-height: 2.75rem; display: inline-flex; align-items: center; }
+.page-not-found { padding-block: 5rem; min-height: 60vh; }
+.page-not-found h1 { font-size: 2.5rem; line-height: 1.15; font-weight: 500; letter-spacing: -.03em; }
+.section-label { font-size: .85rem; color: var(--muted); }
+}
+
+:root[data-keyboard-navigation] *, :root[data-keyboard-navigation] *::before, :root[data-keyboard-navigation] *::after { animation: none !important; transition: none !important; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } *, *::before, *::after { animation: none !important; transition: none !important; } }

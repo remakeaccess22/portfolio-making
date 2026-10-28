@@ -1,57 +1,16 @@
 @import "tailwindcss";
+@import "./styles/portfolio.css";
 
-/*Satoshi*/
-@font-face {
-  font-family: "Satoshi";
-  src: url("./assets/fonts/Satoshi-Regular.otf") format("opentype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Satoshi";
-  src: url("./assets/fonts/Satoshi-Medium.otf") format("opentype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Satoshi";
-  src: url("src/assets/fonts/Satoshi-SemiBold.otf") format("opentype");
-  font-weight: 600;
-}
-
-/*Plus Jakarta Sans*/
-@font-face {
-  font-family: "Plus Jakarta Sans";
-  src: url("src/assets/fonts/PlusJakartaSans-Regular.ttf") format("opentype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Plus Jakarta Sans";
-  src: url("src/assets/fonts/PlusJakartaSans-Medium.ttf") format("opentype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Plus Jakarta Sans";
-  src: url("src/assets/fonts/PlusJakartaSans-SemiBold.ttf") format("opentype");
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: "Plus Jakarta Sans";
-  src: url("src/assets/fonts/PlusJakartaSans-Bold.ttf") format("opentype");
-  font-weight: 700;
-}
-
-body {
-  cursor: none;
-}
-
-* {
-  cursor: none !important;
-}
-
-html {
-  scroll-behavior: smooth;
+@theme inline {
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-action: var(--action);
+  --color-focus: var(--focus);
+  --color-identity: var(--red);
+  --font-display: var(--font-heading);
+  --font-sans: var(--font-body);
+  --breakpoint-md: 47.5625rem;
 }
