@@ -24,14 +24,14 @@ The build validates published Insights before generating `dist/`. Vercel deploys
 
 - `src/data/portfolio.js`: profile, ventures, selected work, and professional experience.
 - `src/data/initiatives.js`: the five initiative stories, photographs, roles, and partner credits.
-- `src/components/portfolio/`: homepage, shared identity, section headings, experience, and Lenis/GSAP motion.
+- `src/components/portfolio/`: EditorialPortfolio homepage and styles, GalleryExperience disclosures, shared identity, and Lenis/GSAP motion.
 - `src/components/initiatives/`: initiative listing and article pages.
 - `src/components/insights/`: article archive and reading pages.
 - `src/styles/portfolio.css`: font faces, base tokens, focus, and reduced-motion behavior.
 - `public/images/brand/`, `public/images/work/`, `public/images/events/`: supplied branding, project artwork, event photography, and partner logos.
 - `DESIGN.md` and `PRODUCT.md`: design rules and product context.
 
-The site uses a compact light layout, a logo-only header, a blue founder role, 16px project corners, native contribution dropdowns, and a quiet Writing soon link while the article archive is empty. Supporting pages use the same typography and accessible navigation.
+The homepage uses an aligned gallery, two expandable experience groups, a shallow light contact section, a logo-only header, a blue founder role, 16px project corners, native contribution dropdowns, and a quiet Writing soon link while the article archive is empty. Supporting pages use the same typography and accessible navigation.
 
 ## Writing Insights
 

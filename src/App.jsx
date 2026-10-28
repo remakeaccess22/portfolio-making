@@ -2,10 +2,10 @@ import { lazy, Suspense } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { SiteIdentity } from "./components/portfolio/SiteIdentity";
 
-const Portfolio = lazy(() => import("./components/portfolio/Portfolio").then(module => ({ default: module.Portfolio })));
 const InsightsIndex = lazy(() => import("./components/insights/Insights").then(module => ({ default: module.InsightsIndex })));
 const InsightArticle = lazy(() => import("./components/insights/Insights").then(module => ({ default: module.InsightArticle })));
 const InitiativePage = lazy(() => import("./components/initiatives/Initiatives").then(module => ({ default: module.InitiativePage })));
+const EditorialPortfolio = lazy(() => import("./components/portfolio/EditorialPortfolio").then(module => ({ default: module.EditorialPortfolio })));
 
 function JournalShell({ children }) {
   return <><a className="skip-to-content" href="#main-content">Skip to content</a><header className="journal-navigation page-padding"><a className="gap-2" href="/"><SiteIdentity /></a><a href="/#contact">Let’s talk <ArrowUpRight size={14} /></a></header>{children}<footer className="journal-footer page-padding"><span>© {new Date().getFullYear()} Jude Rafael Alayacyac</span><a href="/">Back to portfolio</a></footer></>;
@@ -14,7 +14,8 @@ function JournalShell({ children }) {
 export default function App() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
   let page;
-  if (path === "/" || path === "/design") page = <Portfolio />;
+  if (path === "/design/editorial") page = <EditorialPortfolio preview />;
+  else if (path === "/" || path === "/design") page = <EditorialPortfolio />;
   else if (path === "/insights") page = <JournalShell><InsightsIndex /></JournalShell>;
   else if (path.startsWith("/insights/")) {
     let slug;

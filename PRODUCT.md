@@ -8,7 +8,7 @@ web
 
 ## Product Purpose
 
-Jude Rafael Alayacyac's professional portfolio. Visitors can understand his work as a founder and entrepreneur, explore ventures, selected projects, and professional experience, read event details, and contact him. The user chose the compact work-first proposal A on October 26, 2026.
+Jude Rafael Alayacyac's professional portfolio. Visitors can understand his work as a founder and entrepreneur, explore ventures, selected projects, and professional experience, read event details, and contact him. The user approved the aligned gallery direction based on references 2–3 on October 29, 2026.
 
 ## Users
 
@@ -38,7 +38,7 @@ React/Vite application with Tailwind CSS v4 styling, Lenis, and GSAP; source-man
 
 ## Brand Commitments
 
-Preserve founder identity and factual content. The user wants compact, professional, simple, impactful presentation with product-designer craft and an Apple influence. The approved reference is the code-based Option A study under design/research/2026-10-26/. The large homepage Insights promotion is removed; a quiet Writing soon link remains. The founder role is medium-weight blue and has no adjacent city label. Selected Work contains three illustrated projects and a text-only MooManage entry, using the user’s exact descriptions and contributions. Contributions use native My contribution dropdowns, collapsed by default, as clarified by the user.
+Preserve founder identity and factual content. The user wants compact, professional, simple, impactful presentation with product-designer craft and an Apple influence. The approved homepage uses references 2–3: a minimal aligned work gallery, supporting founder identity, compact records, and a shallow light contact section. Professional experience uses two native expandable groups with employers visible in their summaries. The large homepage Insights promotion is removed; a quiet Writing soon link remains. The founder role is medium-weight blue and has no adjacent city label. Selected Work contains three illustrated projects and a text-only MooManage entry, using the user’s exact descriptions and contributions. Contributions use native My contribution dropdowns, collapsed by default, as clarified by the user.
 
 ## Evidence on Hand
 
