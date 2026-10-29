@@ -3,12 +3,7 @@
   "trailingSlash": true,
   "redirects": [
     {
-      "source": "/design",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/design/editorial",
+      "source": "/design/:path*",
       "destination": "/",
       "permanent": true
     }
