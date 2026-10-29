@@ -34,7 +34,7 @@ function ProjectHeading({ project }) {
   </header>;
 }
 
-export function EditorialPortfolio({ preview = false }) {
+export function EditorialPortfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [copied, setCopied] = useState(false);
@@ -76,23 +76,7 @@ export function EditorialPortfolio({ preview = false }) {
     };
   }, []);
 
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = preview ? "Gallery preview — Jude Rafael Alayacyac" : "Jude Rafael Alayacyac — Founder & Entrepreneur";
-    const oldRobots = document.head.querySelector('meta[name="robots"]');
-    const previous = oldRobots?.getAttribute("content");
-    const robots = oldRobots ?? document.createElement("meta");
-    robots.setAttribute("name", "robots");
-    robots.setAttribute("content", preview ? "noindex, nofollow" : "index, follow");
-    if (!oldRobots) document.head.appendChild(robots);
-    return () => {
-      document.title = previousTitle;
-      window.clearTimeout(copyTimer.current);
-      if (!oldRobots) robots.remove();
-      else if (previous === null) robots.removeAttribute("content");
-      else robots.setAttribute("content", previous);
-    };
-  }, [preview]);
+  useEffect(() => () => window.clearTimeout(copyTimer.current), []);
 
   function followSection(event, id) {
     if (event.button > 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;

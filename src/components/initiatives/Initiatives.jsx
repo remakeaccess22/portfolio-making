@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { getInitiative, initiativeHref, initiatives } from "../../data/initiatives";
 import { SectionHeading } from "../portfolio/SectionHeading";
@@ -6,38 +5,6 @@ import "./Initiatives.css";
 
 const backLinkClass = "initiative-back inline-flex min-h-11 items-center gap-2 text-sm leading-[1.5] text-action hover:underline";
 const storyHeadingClass = "m-0 mb-3 text-[1.3rem] font-medium leading-[1.35] tracking-[-.02em]";
-
-function useInitiativeMetadata(initiative) {
-  useEffect(() => {
-    const previousTitle = document.title;
-    const cleanups = [];
-    document.title = initiative ? `${initiative.name} — Jude Rafael` : "Initiative not found — Jude Rafael";
-    const metadata = {
-      description: initiative?.description ?? "This initiative could not be found. Explore Jude Rafael’s leadership and initiatives.",
-      robots: initiative ? "index, follow" : "noindex, nofollow",
-    };
-    for (const [name, content] of Object.entries(metadata)) {
-      let element = document.head.querySelector(`meta[name="${name}"]`);
-      const existed = Boolean(element);
-      const previousContent = element?.getAttribute("content");
-      if (!element) {
-        element = document.createElement("meta");
-        element.setAttribute("name", name);
-        document.head.appendChild(element);
-      }
-      element.setAttribute("content", content);
-      cleanups.push(() => {
-        if (!existed) element.remove();
-        else if (previousContent === null) element.removeAttribute("content");
-        else element.setAttribute("content", previousContent);
-      });
-    }
-    return () => {
-      document.title = previousTitle;
-      cleanups.forEach((cleanup) => cleanup());
-    };
-  }, [initiative]);
-}
 
 function visibleCreditGroups(groups, limit) {
   let remaining = limit;
@@ -96,7 +63,6 @@ export function InitiativesSection() {
 
 export function InitiativePage({ slug }) {
   const initiative = getInitiative(slug);
-  useInitiativeMetadata(initiative);
   if (!initiative) return <main id="main-content" className="initiative-page initiative-not-found page-padding max-w-[44rem] pt-6 pb-16">
     <a className={backLinkClass} href="/#leadership"><ArrowLeft size={15} aria-hidden="true" /> Leadership & initiatives</a>
     <h1 className="mt-8 mb-4 text-[clamp(1.75rem,3vw,2.125rem)] font-medium leading-[1.25] tracking-[-.025em]">Initiative not found.</h1>

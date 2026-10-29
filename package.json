@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/validate-insights.mjs && vite build",
+    "build": "node scripts/validate-insights.mjs && vite build && vite build --ssr src/entry-server.jsx --outDir .ssr && node scripts/prerender.mjs && node scripts/validate-seo.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "new:insight": "node scripts/new-insight.mjs"

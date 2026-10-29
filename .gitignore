@@ -36,3 +36,6 @@ dist-ssr
 # Unpublished writing and unused local font experiments
 /src/content/insights/drafts/
 /src/assets/fonts/Gilroy-*.ttf
+
+# Temporary server bundle used to generate static pages
+/.ssr/

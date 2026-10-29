@@ -17,25 +17,6 @@ function getChapters(study) {
   ];
 }
 
-function useCaseStudyMetadata(study) {
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = study ? `${study.title} — Case study — Jude Rafael` : "Case study not found — Jude Rafael";
-    const previousRobots = document.head.querySelector('meta[name="robots"]');
-    const previousContent = previousRobots?.getAttribute("content");
-    const robots = previousRobots ?? document.createElement("meta");
-    robots.name = "robots";
-    robots.content = study ? "index, follow" : "noindex, nofollow";
-    if (!previousRobots) document.head.appendChild(robots);
-    return () => {
-      document.title = previousTitle;
-      if (!previousRobots) robots.remove();
-      else if (previousContent === null) robots.removeAttribute("content");
-      else robots.content = previousContent;
-    };
-  }, [study]);
-}
-
 function CaseStudyShell({ children }) {
   return <div className="case-study-shell">
     <a className="skip-to-content" href="#main-content">Skip to content</a>
@@ -163,7 +144,6 @@ function CaseStudyArticle({ study }) {
 
 export function CaseStudy({ slug }) {
   const study = Object.hasOwn(caseStudies, slug) ? caseStudies[slug] : null;
-  useCaseStudyMetadata(study);
   if (!study) return <CaseStudyShell><main className="case-study-not-found case-study-container" id="main-content"><h1>Case study not found.</h1><a className="text-link" href="/#work"><ArrowLeft size={15} aria-hidden="true" /> Back to selected work</a></main></CaseStudyShell>;
   return <CaseStudyArticle key={study.slug} study={study} />;
 }

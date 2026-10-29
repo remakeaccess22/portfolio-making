@@ -1,36 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { formatInsightDate, getInsight, insightTopics, insights } from "../../data/insights";
 import "./Insights.css";
-
-function useInsightMetadata({ title, description, noindex = false }) {
-  useEffect(() => {
-    const previousTitle = document.title;
-    const restoreMeta = [];
-    document.title = title;
-    for (const [name, content] of [["description", description], ["robots", noindex ? "noindex, nofollow" : "index, follow"]]) {
-      let element = document.head.querySelector(`meta[name="${name}"]`);
-      const existed = Boolean(element);
-      const previousContent = element?.getAttribute("content");
-      if (!element) {
-        element = document.createElement("meta");
-        element.setAttribute("name", name);
-        document.head.appendChild(element);
-      }
-      element.setAttribute("content", content);
-      restoreMeta.push(() => {
-        if (!existed) element.remove();
-        else if (previousContent === null) element.removeAttribute("content");
-        else element.setAttribute("content", previousContent);
-      });
-    }
-    return () => {
-      document.title = previousTitle;
-      restoreMeta.forEach((restore) => restore());
-    };
-  }, [title, description, noindex]);
-}
 
 function ArticleList({ articles, headingLevel = 3 }) {
   const Heading = headingLevel === 2 ? "h2" : "h3";
@@ -88,10 +60,6 @@ export function InsightsIndex() {
   const filtered = category === "all" ? insights : insights.filter((article) => article.category === category);
   const topic = insightTopics.find((item) => item.id === category);
 
-  useInsightMetadata({
-    title: "Insights — Jude Rafael Alayacyac",
-    description: "Jude Rafael Alayacyac’s writing on entrepreneurship, technology, product building, design, agriculture, and lessons from developing startups.",
-  });
 
   return (
     <main className="insights-page page-padding" id="main-content">
@@ -124,11 +92,6 @@ export function InsightArticle({ slug }) {
   const article = getInsight(slug);
   const related = article ? insights.filter((item) => item.slug !== slug).slice(0, 2) : [];
 
-  useInsightMetadata({
-    title: article ? `${article.title} — Jude Rafael Alayacyac` : "Article not found — Jude Rafael Alayacyac",
-    description: article ? article.excerpt : "This article is not available. Browse published insights by Jude Rafael Alayacyac.",
-    noindex: !article,
-  });
 
   if (!article) {
     return (
