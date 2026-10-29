@@ -6,6 +6,7 @@ const InsightsIndex = lazy(() => import("./components/insights/Insights").then(m
 const InsightArticle = lazy(() => import("./components/insights/Insights").then(module => ({ default: module.InsightArticle })));
 const InitiativePage = lazy(() => import("./components/initiatives/Initiatives").then(module => ({ default: module.InitiativePage })));
 const EditorialPortfolio = lazy(() => import("./components/portfolio/EditorialPortfolio").then(module => ({ default: module.EditorialPortfolio })));
+const CaseStudy = lazy(() => import("./components/portfolio/CaseStudy").then(module => ({ default: module.CaseStudy })));
 
 function JournalShell({ children }) {
   return <><a className="skip-to-content" href="#main-content">Skip to content</a><header className="journal-navigation page-padding"><a className="gap-2" href="/"><SiteIdentity /></a><a href="/#contact">Let’s talk <ArrowUpRight size={14} /></a></header>{children}<footer className="journal-footer page-padding"><span>© {new Date().getFullYear()} Jude Rafael Alayacyac</span><a href="/">Back to portfolio</a></footer></>;
@@ -16,6 +17,11 @@ export default function App() {
   let page;
   if (path === "/design/editorial") page = <EditorialPortfolio preview />;
   else if (path === "/" || path === "/design") page = <EditorialPortfolio />;
+  else if (path.startsWith("/work/")) {
+    let slug;
+    try { slug = decodeURIComponent(path.slice("/work/".length)); } catch { slug = ""; }
+    page = <CaseStudy slug={slug} />;
+  }
   else if (path === "/insights") page = <JournalShell><InsightsIndex /></JournalShell>;
   else if (path.startsWith("/insights/")) {
     let slug;

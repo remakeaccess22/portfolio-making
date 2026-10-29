@@ -37,6 +37,8 @@
 .editorial-project-heading p { margin-top: .2rem; color: var(--muted); font-size: .8125rem; line-height: 1.5; }
 .editorial-portfolio .editorial-project-description { margin-top: .7rem; font-size: .875rem; line-height: 1.65; max-width: 60ch; text-wrap: pretty; }
 .editorial-contribution { min-width: 0; margin-top: .8rem; }
+.editorial-case-study-link { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 2.75rem; margin-top: .8rem; padding-block: .5rem; font-size: .8125rem; }
+.editorial-case-study-link:hover { text-decoration: underline; }
 .editorial-contribution summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 2.75rem; padding-block: .5rem; font-size: .8125rem; cursor: pointer; list-style: none; }
 .editorial-contribution summary::-webkit-details-marker { display: none; }
 .editorial-contribution summary:hover { text-decoration: underline; }
@@ -45,7 +47,8 @@
 .editorial-contribution p { margin: .1rem 0 .75rem; font-size: .875rem; line-height: 1.7; color: var(--muted); }
 .editorial-text-project { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,2fr); gap: 2rem; padding-top: 1.25rem; margin-top: 2rem; border-top: 1px solid var(--line); }
 .editorial-text-project .editorial-project-heading { margin-top: 0; }
-.editorial-text-project > p { max-width: 55ch; font-size: .875rem; line-height: 1.65; color: var(--muted); }
+.editorial-text-project > div > p { max-width: 55ch; font-size: .875rem; line-height: 1.65; color: var(--muted); }
+.editorial-text-project .editorial-case-study-link { max-width: 12rem; margin-top: .4rem; }
 .editorial-record-section, .gallery-experience { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,2fr); column-gap: 3rem; padding-top: clamp(3rem,5vw,4.5rem); }
 .editorial-section-intro, .gallery-section-intro { padding-top: 1rem; }
 .editorial-ventures, .gallery-experience-groups { border-top: 1px solid var(--line); }
@@ -139,8 +142,9 @@
   .editorial-project-heading h3 { font-size: 1.0625rem; }
   .editorial-portfolio .editorial-project-description { font-size: .9375rem; }
   .editorial-contribution { margin-top: .6rem; }
+  .editorial-case-study-link { margin-top: .6rem; }
   .editorial-text-project { display: block; margin-top: 1.5rem; padding-top: 1.25rem; }
-  .editorial-text-project > p { margin-top: .65rem; font-size: .9375rem; }
+  .editorial-text-project > div > p { margin-top: .65rem; font-size: .9375rem; }
   .editorial-record-section, .gallery-experience { display: block; padding-top: 2.75rem; }
   .editorial-section-intro, .gallery-section-intro { border-top: 0; padding-top: 0; margin-bottom: 1.25rem; }
   .editorial-section-intro h2, .gallery-section-intro h2, .editorial-portfolio .initiatives-section h2, .editorial-about > h2 { font-size: 1.375rem; }

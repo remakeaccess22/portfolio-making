@@ -13,6 +13,7 @@ const illustratedProjects = projects.filter(project => project.image);
 const otherProjects = projects.filter(project => !project.image);
 
 function ProjectContribution({ project }) {
+  if (project.caseStudy) return <a className="editorial-case-study-link" href={project.caseStudy} aria-label={`${project.caseStudyLabel ?? "View case study"}: ${project.title}`}>{project.caseStudyLabel ?? "View case study"} <ArrowUpRight size={15} aria-hidden="true" /></a>;
   if (!project.contribution) return null;
   return <details className="editorial-contribution">
     <summary>My contribution <ChevronDown size={15} aria-hidden="true" /></summary>
@@ -141,7 +142,7 @@ export function EditorialPortfolio({ preview = false }) {
           <p className="editorial-project-description">{project.description}</p>
           <ProjectContribution project={project} />
         </article>)}</div>
-        {otherProjects.map(project => <article className="editorial-text-project" key={project.id} aria-labelledby={`project-${project.id}`}><ProjectHeading project={project} /><p>{project.description}</p></article>)}
+        {otherProjects.map(project => <article className="editorial-text-project" key={project.id} aria-labelledby={`project-${project.id}`}><ProjectHeading project={project} /><div><p>{project.description}</p><ProjectContribution project={project} /></div></article>)}
       </section>
 
       <section id="ventures" className="editorial-record-section editorial-container" aria-labelledby="ventures-heading">

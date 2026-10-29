@@ -85,19 +85,22 @@ export const experienceGroups = [
 
 export const projects = [
   {
-    id: "farmiq", title: "FarmIQ Mobile Application", role: "Product Lead & Strategy",
+    id: "farmiq", title: "FarmIQ Mobile Application", role: "Product Lead",
+    caseStudy: "/work/farmiq/",
     description: "FarmIQ is a livestock management platform designed to simplify daily farm records, give owners clearer oversight, and support animal traceability.",
     contribution: "I lead FarmIQ’s product strategy, direction, and design, turning farmer insights into actionable product requirements, prioritizing features, and driving decisions that shape the platform’s development and growth.",
     image: { src: "/images/work/farmiq.webp", width: 3840, height: 2160, alt: "FarmIQ Mobile Application branding beside its My Farm livestock dashboard" },
   },
   {
-    id: "axon", title: "Axon Tickets", role: "Brand Direction",
+    id: "axon", title: "Axon Tickets", role: "Product Research & Design",
+    caseStudy: "/work/axon-tickets/",
     description: "Axon Tickets helps organizers prepare for their events and manage participants from registration to entry.",
     contribution: "I led the brand direction, shaping its visual identity and positioning to align with the target audience and industry, establishing a consistent brand presence across the website and event portfolio.",
     image: { src: "/images/work/axon-tickets.webp", width: 3840, height: 2160, alt: "Axon Tickets branding and its website for event organizers" },
   },
   {
-    id: "resguard", title: "ResGuard", role: "Product Lead & Strategy",
+    id: "resguard", title: "ResGuard", role: "Product Strategy Lead",
+    caseStudy: "/work/resguard/",
     description: "ResGuard is a digital receipt organizer designed to turn scattered receipts into organized records that are easy to find, review and export.",
     contribution: "I lead ResGuard’s product strategy, direction, and design, translating user needs into actionable product requirements, prioritizing features, and shaping an intuitive experience that simplifies receipt organization, tracking, and export.",
     image: { src: "/images/work/resguard.webp", width: 3840, height: 2160, alt: "ResGuard branding beside a preview of its digital receipt organizer" },
