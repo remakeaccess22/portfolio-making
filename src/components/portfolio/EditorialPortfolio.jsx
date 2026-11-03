@@ -1,3 +1,4 @@
+import { LoadingImage } from "../loading/LoadingImage";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Check, ChevronDown, Copy, Menu, X } from "lucide-react";
 import { profile, projects, ventures } from "../../data/portfolio";
@@ -23,7 +24,7 @@ function ProjectContribution({ project }) {
 
 function ProjectImage({ project, eager = false }) {
   return <a className="editorial-project-image" href={project.image.src} target="_blank" rel="noreferrer" aria-label={`Open full-size ${project.title} project image`} data-reveal>
-    <img src={project.image.src} alt={project.image.alt} width={project.image.width} height={project.image.height} loading={eager ? "eager" : "lazy"} fetchPriority={eager ? "high" : "auto"} decoding="async" />
+    <LoadingImage src={project.image.src} alt={project.image.alt} width={project.image.width} height={project.image.height} loading={eager ? "eager" : "lazy"} fetchPriority={eager ? "high" : "auto"} decoding="async" />
   </a>;
 }
 

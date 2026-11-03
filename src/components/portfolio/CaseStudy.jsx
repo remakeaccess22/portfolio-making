@@ -1,3 +1,4 @@
+import { LoadingImage } from "../loading/LoadingImage";
 import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { caseStudies, caseStudyOrder } from "../../data/case-studies";
@@ -71,7 +72,7 @@ function NextProject({ study }) {
   return <nav className="case-study-next-project" aria-label="Next project">
     <a href={`/work/${next.slug}/`}>
       <div className="case-study-next-copy"><h2>{next.title} <ArrowRight size={28} aria-hidden="true" /></h2><p>{next.role}</p></div>
-      {next.cover ? <img src={next.cover.src} alt="" width={next.cover.width} height={next.cover.height} loading="lazy" decoding="async" /> : null}
+      {next.cover ? <LoadingImage src={next.cover.src} alt="" width={next.cover.width} height={next.cover.height} loading="lazy" decoding="async" /> : null}
     </a>
   </nav>;
 }
@@ -94,7 +95,7 @@ function CaseStudyArticle({ study }) {
         </header>
 
         {study.cover ? <figure className="case-study-cover">
-          <a href={study.cover.src} target="_blank" rel="noreferrer" aria-label={`Open full-size ${study.title} image in a new tab`}><img src={study.cover.src} alt={study.cover.alt} width={study.cover.width} height={study.cover.height} fetchPriority="high" decoding="async" /></a>
+          <a href={study.cover.src} target="_blank" rel="noreferrer" aria-label={`Open full-size ${study.title} image in a new tab`}><LoadingImage src={study.cover.src} alt={study.cover.alt} width={study.cover.width} height={study.cover.height} fetchPriority="high" decoding="async" /></a>
           <figcaption><span>{study.cover.caption}</span><a href={study.cover.src} target="_blank" rel="noreferrer">Full-size image <ArrowUpRight size={13} aria-hidden="true" /></a></figcaption>
         </figure> : null}
 

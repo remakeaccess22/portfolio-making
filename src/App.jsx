@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { PageLoadBoundary, PageSkeleton } from "./components/loading/PageLoading";
 import { ArrowUpRight } from "lucide-react";
 import { getPageMetadata } from "./data/seo";
 import { usePageMetadata } from "./components/seo/usePageMetadata";
@@ -37,5 +38,5 @@ export default function App({ pathname = window.location.pathname }) {
     try { slug = decodeURIComponent(path.slice("/initiatives/".length)); } catch { slug = ""; }
     page = <JournalShell><InitiativePage slug={slug} /></JournalShell>;
   } else page = <JournalShell><main className="page-not-found page-padding" id="main-content"><h1>Page not found.</h1><a className="text-link" href="/">Back to portfolio <ArrowUpRight size={16} /></a></main></JournalShell>;
-  return <Suspense fallback={<p className="page-padding" role="status">Loading…</p>}>{page}</Suspense>;
+  return <PageLoadBoundary><Suspense fallback={<PageSkeleton metadata={metadata} path={path} />}>{page}</Suspense></PageLoadBoundary>;
 }
