@@ -32,6 +32,18 @@
 .loading-home-intro .loading-name { margin-bottom: 1.5rem; }
 .loading-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem; }
 .loading-records { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; padding-block: 4rem; }
+.page-loading-design main.loading-container { max-width: 72rem; }
+.page-loading-design .loading-header { max-width: 88rem; }
+.loading-design-intro { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: 2rem; padding-block: 1.75rem 2rem; }
+.loading-design-intro h1 { margin: 0; font-size: clamp(2rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.15; letter-spacing: -.035em; }
+.loading-design-intro > div { width: 100%; max-width: 28rem; justify-self: end; }
+.loading-design-intro .loading-role { margin: 0 0 0 auto; }
+.loading-design-row { display: grid; grid-template-columns: minmax(13rem, .8fr) minmax(0, 1.8fr); gap: 3rem; align-items: start; }
+.loading-design-copy .loading-name { margin-top: .15rem; margin-bottom: 1.2rem; }
+.loading-design-project { width: 100%; max-width: 42rem; justify-self: end; }
+.loading-design-project .loading-block { border-radius: 1rem; }
+.loading-design-applications { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; margin-top: .75rem; }
+.loading-design-applications .loading-block { aspect-ratio: 1; }
 .page-loading-article main { max-width: 44rem; padding-top: 1.5rem; }
 .page-loading-article .loading-title { margin-top: 3rem; font-size: clamp(1.75rem, 3vw, 2.125rem); font-weight: 500; line-height: 1.25; }
 .loading-summary { margin-top: 1.25rem; }
@@ -45,10 +57,21 @@
 .loading-failure button { border: 1px solid #e1e3de; border-radius: .5rem; padding-inline: 1rem; background: #fff; }
 .loading-failure a { text-decoration: underline; }
 @media (max-width: 63.9375rem) {
+  .loading-design-row { gap: 2rem; }
   .loading-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
   .page-loading-home .loading-header { min-height: 4.5rem; }
 }
+@media (max-width: 53.75rem) {
+  .loading-design-row { grid-template-columns: 1fr; gap: 1rem; }
+  .loading-design-project { justify-self: start; }
+}
 @media (max-width: 47.5rem) {
+  .loading-design-intro { grid-template-columns: 1fr; padding-block: 1.25rem 1.75rem; }
+  .loading-design-intro { gap: 1rem; }
+  .loading-design-intro > div { justify-self: start; }
+  .loading-design-intro h1 { font-size: 2rem; }
+  .loading-design-intro .loading-role { margin-left: 0; }
+  .loading-design-applications { gap: .5rem; margin-top: .5rem; }
   .page-loading-home .loading-header { min-height: 4rem; }
   .loading-home-intro { grid-template-columns: 1fr; gap: 1.25rem; padding-block: 1.5rem 1.75rem; }
   .loading-home-intro h1 { font-size: clamp(2.8rem, 11vw, 4rem); }

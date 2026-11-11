@@ -1,0 +1,186 @@
+{
+  "retrieved": "2026-11-12",
+  "credit": "Jude led Run for Love; led and designed the other four brands. The collection mixes concepts and produced work.",
+  "assets": [
+    {
+      "file": "public/images/design/run-for-love-board-700.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=154-16",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "ffa9634023c8f28bc426f6a0cda11708b78e4ca5de2b8baaef529ef362cc45c0"
+    },
+    {
+      "file": "public/images/design/run-for-love-board-1400.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=154-16",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "832b149f7edb7bc460424ac64c85e1752020ec68fbbad6a956a8cb0ee1641121"
+    },
+    {
+      "file": "public/images/design/run-for-love-0.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=154-17",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "ff7591e3a3543519e03f18910bd021d3b3ae0f0fa69def1cda4faa63888435d8"
+    },
+    {
+      "file": "public/images/design/run-for-love-1.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=154-18",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "24537ae1734da57a9ce90aa1cd3d6fd5fb5dd801b39b5a6667c0b6ee5e54199a"
+    },
+    {
+      "file": "public/images/design/run-for-love-2.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=154-19",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "df38e08f7c54ea52a017d0fdc48aaa2deddb8f3f7d004bb4910a45b94c6e3d39"
+    },
+    {
+      "file": "public/images/design/run-for-love-3.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=154-22",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "f5115249385a18b2c89347ae910959d49c36e819b0e9e33b3e7ffefe8ea96628"
+    },
+    {
+      "file": "public/images/design/axon-entertainment-board-700.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=155-653",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "8721aeb089d2952e6ebeadc99edf62ca62bdb673ee75c4d249cf336cf28de152"
+    },
+    {
+      "file": "public/images/design/axon-entertainment-board-1400.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=155-653",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "5706f23fa5a71e24f4b167af2f6584bf166723606d1e05677c7ee782f6ffaa35"
+    },
+    {
+      "file": "public/images/design/axon-entertainment-0.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=155-654",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "7350d9877a1401c79787b2b0877ea1f0a824357ac64e79213b8f0a9dc48aab66"
+    },
+    {
+      "file": "public/images/design/axon-entertainment-1.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=155-662",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "42f7af2f9da5f2ccce428df0513a5a06e224ce4e200c6b7486f1b031adfac195"
+    },
+    {
+      "file": "public/images/design/axon-entertainment-2.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=155-660",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "68161858cfadd932b8105a5d1e1622f21ba5b2526d73c849305a0f550689f035"
+    },
+    {
+      "file": "public/images/design/axon-entertainment-3.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=155-666",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "fee633efa8b2693a9666a1d947d64ef3382edbd7ef0358f1430b026432507228"
+    },
+    {
+      "file": "public/images/design/made-lucid-studio-board-700.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=155-700",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "debb1b363b5258920e0ddc9e4b5013c06a9605be09b3c59c7c99a65576daae86"
+    },
+    {
+      "file": "public/images/design/made-lucid-studio-board-1400.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=155-700",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "2c787dfe088e7e7f1f48867728800a508fe85fb44eb409d7e1e124d7788d2213"
+    },
+    {
+      "file": "public/images/design/made-lucid-studio-0.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=155-701",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "044b4dc42f3fd76d509e99e89af6145cce615dfa4dc0ddf9ef33e37287b9afdb"
+    },
+    {
+      "file": "public/images/design/made-lucid-studio-1.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=155-703",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "5a526aac54f280d97c352f350a1d1b5e3763880797e7f4278aac6a8d16ea90c2"
+    },
+    {
+      "file": "public/images/design/made-lucid-studio-2.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=155-707",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "24bc5803f3036e585e199bfe127813e42e39691037396e363d2bfcc8d711f31d"
+    },
+    {
+      "file": "public/images/design/made-lucid-studio-3.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=155-713",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "53ada0af7cb26f54ad5ef1d16c4f9f357599e02b5a0af0ff3e73773a6188cb88"
+    },
+    {
+      "file": "public/images/design/farmiq-board-700.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=155-762",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "c9899f84b7d564d7747fc5c102246bd4df3e6cbcc09dd1a91b48f3f0a3298415"
+    },
+    {
+      "file": "public/images/design/farmiq-board-1400.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=155-762",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "3cacea2cb176e873d6d4740c2cf9884a2626b860c7eba41b9e31c489be27de0f"
+    },
+    {
+      "file": "public/images/design/farmiq-0.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=155-763",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "17d1eef8d73f72047a408106254f7f920058c59c431685b3a5767117963c6ed4"
+    },
+    {
+      "file": "public/images/design/farmiq-1.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=155-765",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "ef1f2b2e42389b8363352d38e3b1c4675ed604d570ac992b578cbfaaac944908"
+    },
+    {
+      "file": "public/images/design/farmiq-2.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=155-771",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "8b7c43e6d5bacdc576c70ab41c946b513de0191e17e545e8ba8249577558a347"
+    },
+    {
+      "file": "public/images/design/farmiq-3.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=155-775",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "aa5f9e93377d7d5206b7338e0444529331eb05c551e0be814858b986c6b05ec9"
+    },
+    {
+      "file": "public/images/design/nexus-publications-board-700.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=193-929",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "e0e6aa168ec78ff26cdf242b8a80f8ee054bb6e8b902c7155be7b97702bfa024"
+    },
+    {
+      "file": "public/images/design/nexus-publications-board-1400.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=193-929",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "25e1b14caf04b0fae04968a9dfa28f7a34c7155b255fda4b2a27d469ee58b5ba"
+    },
+    {
+      "file": "public/images/design/nexus-publications-0.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=193-930",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "4c6e09edea0c4bba52292ebf3ccb31c5bbfe22d8a695dbc007943f67bf4ef1b1"
+    },
+    {
+      "file": "public/images/design/nexus-publications-1.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=193-1151",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "89da4f537afd1724a1c8bb8a2e8c12699cffaf5359a327e19668474269947026"
+    },
+    {
+      "file": "public/images/design/nexus-publications-2.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=193-1154",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "1ad37eb4804c9fa927434ce04eb8e7d0b29179a23e51bd8bfef077637dac1dc3"
+    },
+    {
+      "file": "public/images/design/nexus-publications-3.webp",
+      "source": "https://www.figma.com/design/RowquSDc4TqmvLn1bUPWqY/Personal-Projects?node-id=193-1156",
+      "kind": "User-supplied Figma artwork, exported without composition changes",
+      "sha256": "f6e35f02b8e5f45855dc60fba8d24ab3c2e8bcffd3cf6032842e3efd7d838a9f"
+    }
+  ]
+}

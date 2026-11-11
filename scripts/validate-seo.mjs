@@ -58,6 +58,7 @@ for (const file of files) {
   for (const stylesheet of tags(head, "link").filter(tag => tag.rel === "stylesheet")) await access(resolve(output, `.${stylesheet.href}`));
   if (path.startsWith("/work/")) assert(tags(head, "link").some(tag => tag.rel === "stylesheet" && tag.href.includes("CaseStudy-")), `${path}: case styles work without JavaScript`);
   if (path === "/") assert(tags(head, "link").some(tag => tag.rel === "stylesheet" && tag.href.includes("EditorialPortfolio-")), "Homepage styles work without JavaScript");
+  if (path.startsWith("/expertise/design/")) assert(tags(head, "link").some(tag => tag.rel === "stylesheet" && tag.href.includes("DesignShowcase-")), `${path}: design gallery styles work without JavaScript`);
   pages.set(path, { html, noindex, canonical: canonical[0]?.href });
 }
 
@@ -65,7 +66,7 @@ const sitemap = await readFile(resolve(output, "sitemap.xml"), "utf8");
 const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(([, url]) => decode(url));
 assert.equal(new Set(urls).size, urls.length, "No duplicate sitemap URLs");
 assert.deepEqual(new Set(urls), new Set([...pages.values()].filter(page => !page.noindex).map(page => page.canonical)), "Sitemap contains exactly the indexable pages");
-assert(!sitemap.includes("/expertise/") && !sitemap.includes("/design/"), "Draft outlines and previews stay out of the sitemap");
+assert(!urls.some(url => new URL(url).pathname.startsWith("/design/") || new URL(url).pathname.startsWith("/expertise/business/")), "Draft business outlines and portfolio previews stay out of the sitemap");
 const robots = await readFile(resolve(output, "robots.txt"), "utf8");
 assert(robots.includes(`Sitemap: ${origin}/sitemap.xml`) && robots.includes("Allow: /"), "Crawling allowed and sitemap declared");
 for (const [path, { html }] of pages) {

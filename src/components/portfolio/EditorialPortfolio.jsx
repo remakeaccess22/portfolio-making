@@ -103,7 +103,7 @@ export function EditorialPortfolio() {
         <a className="editorial-identity" href="#top" onClick={event => followSection(event, "top")}><SiteIdentity /></a>
         <button ref={menuButton} className="editorial-menu-button" aria-expanded={menuOpen} aria-controls="editorial-navigation" aria-label={menuOpen ? "Close navigation" : "Open navigation"} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X size={21} aria-hidden="true" /> : <Menu size={21} aria-hidden="true" />}</button>
         <nav id="editorial-navigation" className={`editorial-navigation${menuOpen ? " is-open" : ""}`} aria-label="Main navigation">
-          {navigation.map(([id, label]) => <a key={id} href={`#${id}`} onClick={event => followSection(event, id)} aria-current={activeSection === id ? "location" : undefined}>{label}</a>)}
+          {navigation.map(([id, label]) => <span className="editorial-nav-item" key={id}><a href={`#${id}`} onClick={event => followSection(event, id)} aria-current={activeSection === id ? "location" : undefined}>{label}</a>{id === "work" && <a href="/expertise/design/">Design Expertise</a>}</span>)}
           <a className="editorial-nav-contact" href="#contact" onClick={event => followSection(event, "contact")}>Let’s talk <ArrowUpRight size={14} aria-hidden="true" /></a>
         </nav>
       </div>

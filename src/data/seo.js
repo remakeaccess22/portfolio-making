@@ -2,6 +2,7 @@ import { caseStudies, caseStudyOrder } from "./case-studies";
 import { initiatives, initiativeHref } from "./initiatives";
 import { insights } from "./insights";
 import { profile } from "./portfolio";
+import { designCollections } from "./design-showcase";
 
 export const siteUrl = "https://judealayacyac.vercel.app";
 const defaultImage = { src: "/images/brand/jd-logo.png", width: 852, height: 852, alt: "Jude Rafael Alayacyac’s JD monogram" };
@@ -43,6 +44,7 @@ export function getPageMetadata(pathname) {
   const path = normalizePath(pathname);
   if (path === "/") return page("/", `${profile.name} — Founder & Entrepreneur`, "Explore Jude Rafael Alayacyac’s work in product strategy, UX, and entrepreneurship, including FarmIQ, Axon Tickets, and ResGuard. Based in Davao City, Philippines.");
   if (path === "/design" || path === "/design/editorial") return page("/", `Design preview — ${profile.name}`, "Local portfolio design preview.", { noindex: true });
+  if (path === "/expertise/design") return page("/expertise/design/", `Design Expertise — ${profile.name}`, "Explore Jude Rafael Alayacyac’s brand identities, creative direction, campaigns, and design applications for five ventures and events.", { designShowcase: true, image: designCollections[0].preview });
   for (const slug of caseStudyOrder) {
     if (path !== `/work/${slug}`) continue;
     const study = caseStudies[slug];
@@ -57,7 +59,7 @@ export function getPageMetadata(pathname) {
 }
 
 export function getPublishedPages() {
-  return [getPageMetadata("/"), ...caseStudyOrder.map(slug => getPageMetadata(`/work/${slug}/`)), ...initiatives.map(item => getPageMetadata(initiativeHref(item.slug))), getPageMetadata("/insights/"), ...insights.map(item => getPageMetadata(item.href))];
+  return [getPageMetadata("/"), getPageMetadata("/expertise/design/"), ...caseStudyOrder.map(slug => getPageMetadata(`/work/${slug}/`)), ...initiatives.map(item => getPageMetadata(initiativeHref(item.slug))), getPageMetadata("/insights/"), ...insights.map(item => getPageMetadata(item.href))];
 }
 
 export function getStructuredData(metadata) {

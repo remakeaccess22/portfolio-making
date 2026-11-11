@@ -15,6 +15,7 @@
 .editorial-header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 4.75rem; gap: 2rem; }
 .editorial-identity { display: inline-flex; align-items: center; min-height: 2.75rem; }
 .editorial-navigation { display: flex; align-items: center; gap: clamp(1rem, 2.4vw, 2rem); font-size: .8125rem; }
+.editorial-nav-item { display: contents; }
 .editorial-navigation a { display: inline-flex; min-height: 2.75rem; align-items: center; gap: .35rem; color: var(--muted); }
 .editorial-navigation a:hover, .editorial-navigation a[aria-current] { color: var(--ink); text-decoration: underline; }
 .editorial-navigation .editorial-nav-contact { color: var(--ink); margin-left: 1rem; }
