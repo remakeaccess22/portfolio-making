@@ -26,7 +26,7 @@ function CaseStudyShell({ children }) {
       <a href="/#contact">Let’s talk <ArrowUpRight size={15} aria-hidden="true" /></a>
     </header>
     {children}
-    <footer className="case-study-site-footer case-study-container"><span>© {new Date().getFullYear()} {profile.name}</span><a href="/#work">Back to portfolio <ArrowUpRight size={14} aria-hidden="true" /></a></footer>
+    <footer className="case-study-site-footer case-study-container"><span>© {new Date().getFullYear()} {profile.name}</span><a href="/expertise/business/#work">Back to selected work <ArrowUpRight size={14} aria-hidden="true" /></a></footer>
   </div>;
 }
 
@@ -85,7 +85,7 @@ function CaseStudyArticle({ study }) {
     <main id="main-content" className="case-study-page case-study-container">
       <article aria-labelledby="case-study-title">
         <header className="case-study-heading">
-          <a className="case-study-back" href="/#work"><ArrowLeft size={15} aria-hidden="true" /> Back to selected work</a>
+          <a className="case-study-back" href="/expertise/business/#work"><ArrowLeft size={15} aria-hidden="true" /> Back to selected work</a>
           <h1 className="case-study-title" id="case-study-title">{study.title}</h1>
           <dl className="case-study-facts">
             <div><dt>My role</dt><dd>{study.role}</dd></div>
@@ -145,6 +145,6 @@ function CaseStudyArticle({ study }) {
 
 export function CaseStudy({ slug }) {
   const study = Object.hasOwn(caseStudies, slug) ? caseStudies[slug] : null;
-  if (!study) return <CaseStudyShell><main className="case-study-not-found case-study-container" id="main-content"><h1>Case study not found.</h1><a className="text-link" href="/#work"><ArrowLeft size={15} aria-hidden="true" /> Back to selected work</a></main></CaseStudyShell>;
+  if (!study) return <CaseStudyShell><main className="case-study-not-found case-study-container" id="main-content"><h1>Case study not found.</h1><a className="text-link" href="/expertise/business/#work"><ArrowLeft size={15} aria-hidden="true" /> Back to selected work</a></main></CaseStudyShell>;
   return <CaseStudyArticle key={study.slug} study={study} />;
 }

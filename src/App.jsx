@@ -10,6 +10,7 @@ const InsightArticle = lazy(() => import("./components/insights/Insights").then(
 const InitiativePage = lazy(() => import("./components/initiatives/Initiatives").then(module => ({ default: module.InitiativePage })));
 const EditorialPortfolio = lazy(() => import("./components/portfolio/EditorialPortfolio").then(module => ({ default: module.EditorialPortfolio })));
 const CaseStudy = lazy(() => import("./components/portfolio/CaseStudy").then(module => ({ default: module.CaseStudy })));
+const BusinessExpertise = lazy(() => import("./components/portfolio/BusinessExpertise").then(module => ({ default: module.BusinessExpertise })));
 const DesignShowcase = lazy(() => import("./components/design/DesignShowcase").then(module => ({ default: module.DesignShowcase })));
 
 function JournalShell({ children }) {
@@ -29,6 +30,7 @@ export default function App({ pathname = window.location.pathname }) {
     try { slug = decodeURIComponent(path.slice("/work/".length)); } catch { slug = ""; }
     page = <CaseStudy slug={slug} />;
   }
+  else if (path === "/expertise/business") page = <BusinessExpertise />;
   else if (path === "/expertise/design") page = <DesignShowcase />;
   else if (path === "/insights") page = <JournalShell><InsightsIndex /></JournalShell>;
   else if (path.startsWith("/insights/")) {

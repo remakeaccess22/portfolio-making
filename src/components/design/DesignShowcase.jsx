@@ -3,22 +3,9 @@ import { ArrowUpRight, RotateCcw, X, ZoomIn, ZoomOut } from "lucide-react";
 import { designCollections, designShowcaseNote } from "../../data/design-showcase";
 import { profile } from "../../data/portfolio";
 import { LoadingImage } from "../loading/LoadingImage";
-import { SiteIdentity } from "../portfolio/SiteIdentity";
+import { ExpertiseHeader } from "../portfolio/ExpertiseHeader";
 import "../portfolio/EditorialPortfolio.css";
 import "./DesignShowcase.css";
-
-function DesignHeader() {
-  return <header className="editorial-header" data-site-header>
-    <div className="editorial-header-inner editorial-container">
-      <a className="editorial-identity" href="/"><SiteIdentity /></a>
-      <nav className="design-navigation" aria-label="Main navigation">
-        <a href="/#work">Work</a>
-        <a href="/expertise/design/" aria-current="page">Design Expertise</a>
-        <a href="/#contact">Let’s talk <ArrowUpRight size={14} aria-hidden="true" /></a>
-      </nav>
-    </div>
-  </header>;
-}
 
 function Artwork({ art, onOpen, eager = false }) {
   return <button type="button" className="design-artwork" onClick={() => onOpen(art)} aria-label={`Open full screen: ${art.alt}`}>
@@ -72,7 +59,7 @@ export function DesignShowcase() {
   const [selected, setSelected] = useState(null);
   return <div className="editorial-portfolio design-showcase">
     <a className="skip-to-content" href="#main-content">Skip to content</a>
-    <DesignHeader />
+    <ExpertiseHeader area="design" />
     <main id="main-content" className="editorial-container">
       <header className="design-introduction">
         <h1>Design expertise.</h1>

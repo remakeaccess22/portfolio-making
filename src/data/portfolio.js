@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Jude Rafael Alayacyac",
+  name: "Jude Rafael S. Alayacyac",
   email: "alayacyacjude@gmail.com",
   location: "Davao City, Philippines",
   linkedin: "https://www.linkedin.com/in/jude-alayacyac/",

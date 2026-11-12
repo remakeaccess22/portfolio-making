@@ -26,6 +26,9 @@
 .loading-facts .loading-bar:first-child { width: 35%; height: .75rem; }
 .loading-reading { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4rem; padding-top: 4rem; padding-bottom: 3rem; }
 .page-loading-home .loading-container { max-width: 88rem; }
+.page-loading-business .loading-container { max-width: 88rem; }
+.page-loading-business .loading-home-intro { padding-block: 2rem 2.5rem; }
+.page-loading-business .loading-home-intro h1 { font-size: clamp(2rem, 3vw, 2.5rem); }
 .loading-home-intro { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: end; gap: 3rem; padding-block: clamp(1.75rem, 3vw, 3rem) clamp(2rem, 3vw, 3rem); }
 .loading-home-intro h1 { margin: 0; font-size: clamp(3rem, 5.2vw, 4.75rem); font-weight: 400; line-height: 1.08; letter-spacing: -.035em; }
 .loading-home-intro > div { justify-self: end; width: 100%; max-width: 24rem; }
@@ -76,6 +79,8 @@
   .loading-home-intro { grid-template-columns: 1fr; gap: 1.25rem; padding-block: 1.5rem 1.75rem; }
   .loading-home-intro h1 { font-size: clamp(2.8rem, 11vw, 4rem); }
   .loading-home-intro h1 br { display: none; }
+  .page-loading-home .loading-home-intro h1 { font-size: clamp(2.25rem, 9.5vw, 4rem); }
+  .page-loading-home .loading-home-intro h1 br { display: initial; }
   .loading-home-intro > div { justify-self: start; max-width: 31rem; }
   .loading-gallery { grid-template-columns: 1fr; gap: 2.25rem; }
 }

@@ -29,7 +29,7 @@ try {
       if (tag === "title" || tag === "script") return `<${tag} data-page-seo ${attributes}>${tag === "script" ? text : escapeHtml(text)}</${tag}>`;
       return `<${tag} data-page-seo ${attributes}>`;
     }).join("\n  ");
-    const pageModule = !metadata.exists ? "src/App.jsx" : metadata.designShowcase ? "src/components/design/DesignShowcase.jsx" : metadata.study ? "src/components/portfolio/CaseStudy.jsx" : metadata.initiative ? "src/components/initiatives/Initiatives.jsx" : metadata.path.startsWith("/insights/") ? "src/components/insights/Insights.jsx" : "src/components/portfolio/EditorialPortfolio.jsx";
+    const pageModule = !metadata.exists ? "src/App.jsx" : metadata.designShowcase ? "src/components/design/DesignShowcase.jsx" : metadata.businessShowcase ? "src/components/portfolio/BusinessExpertise.jsx" : metadata.study ? "src/components/portfolio/CaseStudy.jsx" : metadata.initiative ? "src/components/initiatives/Initiatives.jsx" : metadata.path.startsWith("/insights/") ? "src/components/insights/Insights.jsx" : "src/components/portfolio/EditorialPortfolio.jsx";
     const css = collectCss("index.html");
     if (manifest[pageModule]) collectCss(pageModule, css);
     // The generic 404 uses only the global stylesheet included by main.jsx.

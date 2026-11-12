@@ -42,9 +42,10 @@ function page(path, title, description, options = {}) {
 
 export function getPageMetadata(pathname) {
   const path = normalizePath(pathname);
-  if (path === "/") return page("/", `${profile.name} — Founder & Entrepreneur`, "Explore Jude Rafael Alayacyac’s work in product strategy, UX, and entrepreneurship, including FarmIQ, Axon Tickets, and ResGuard. Based in Davao City, Philippines.");
+  if (path === "/") return page("/", `${profile.name} — Portfolio`, "Explore Jude Rafael Alayacyac’s work in product strategy, UX, and entrepreneurship, including FarmIQ, Axon Tickets, and ResGuard. Based in Davao City, Philippines.");
   if (path === "/design" || path === "/design/editorial") return page("/", `Design preview — ${profile.name}`, "Local portfolio design preview.", { noindex: true });
   if (path === "/expertise/design") return page("/expertise/design/", `Design Expertise — ${profile.name}`, "Explore Jude Rafael Alayacyac’s brand identities, creative direction, campaigns, and design applications for five ventures and events.", { designShowcase: true, image: designCollections[0].preview });
+  if (path === "/expertise/business") return page("/expertise/business/", `Business Expertise — ${profile.name}`, "Explore Jude Rafael S. Alayacyac’s product strategy, research, and business case studies for FarmIQ, Axon Tickets, and ResGuard.", { businessShowcase: true, image: caseStudies.farmiq.cover });
   for (const slug of caseStudyOrder) {
     if (path !== `/work/${slug}`) continue;
     const study = caseStudies[slug];
@@ -59,7 +60,7 @@ export function getPageMetadata(pathname) {
 }
 
 export function getPublishedPages() {
-  return [getPageMetadata("/"), getPageMetadata("/expertise/design/"), ...caseStudyOrder.map(slug => getPageMetadata(`/work/${slug}/`)), ...initiatives.map(item => getPageMetadata(initiativeHref(item.slug))), getPageMetadata("/insights/"), ...insights.map(item => getPageMetadata(item.href))];
+  return [getPageMetadata("/"), getPageMetadata("/expertise/design/"), getPageMetadata("/expertise/business/"), ...caseStudyOrder.map(slug => getPageMetadata(`/work/${slug}/`)), ...initiatives.map(item => getPageMetadata(initiativeHref(item.slug))), getPageMetadata("/insights/"), ...insights.map(item => getPageMetadata(item.href))];
 }
 
 export function getStructuredData(metadata) {

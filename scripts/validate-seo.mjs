@@ -52,7 +52,7 @@ for (const file of files) {
   for (const script of [...head.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)]) {
     const data = JSON.parse(script[1]);
     assert.equal(data["@context"], "https://schema.org");
-    assert(data["@graph"].some(item => item["@type"] === "Person" && item.name === "Jude Rafael Alayacyac"));
+    assert(data["@graph"].some(item => item["@type"] === "Person" && item.name === "Jude Rafael S. Alayacyac"));
   }
   if (!noindex) assert(head.includes('type="application/ld+json"'), `${path}: structured data`);
   for (const stylesheet of tags(head, "link").filter(tag => tag.rel === "stylesheet")) await access(resolve(output, `.${stylesheet.href}`));
@@ -63,10 +63,19 @@ for (const file of files) {
 }
 
 const sitemap = await readFile(resolve(output, "sitemap.xml"), "utf8");
+const home = pages.get("/").html;
+const business = pages.get("/expertise/business/").html;
+assert(home.includes("Jude Rafael") && home.includes("S. Alayacyac"), "Homepage renders the requested personal name");
+assert(!home.includes('class="editorial-hero-role"'), "Homepage omits the former role label");
+assert(!home.includes('class="editorial-gallery"'), "Selected work lives on Business instead of the homepage");
+for (const slug of ["farmiq", "axon-tickets", "resguard"]) {
+  assert(business.includes(`href="/work/${slug}/"`), `Business links to ${slug}`);
+  assert(pages.get(`/work/${slug}/`).html.includes('href="/expertise/business/#work"'), `${slug} returns to Business selected work`);
+}
 const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(([, url]) => decode(url));
 assert.equal(new Set(urls).size, urls.length, "No duplicate sitemap URLs");
 assert.deepEqual(new Set(urls), new Set([...pages.values()].filter(page => !page.noindex).map(page => page.canonical)), "Sitemap contains exactly the indexable pages");
-assert(!urls.some(url => new URL(url).pathname.startsWith("/design/") || new URL(url).pathname.startsWith("/expertise/business/")), "Draft business outlines and portfolio previews stay out of the sitemap");
+assert(!urls.some(url => new URL(url).pathname.startsWith("/design/")), "Portfolio previews stay out of the sitemap");
 const robots = await readFile(resolve(output, "robots.txt"), "utf8");
 assert(robots.includes(`Sitemap: ${origin}/sitemap.xml`) && robots.includes("Allow: /"), "Crawling allowed and sitemap declared");
 for (const [path, { html }] of pages) {
